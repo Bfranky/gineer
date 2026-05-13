@@ -1,7 +1,8 @@
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import OpeningHours from "@/components/OpeningHours";
-import { BUSINESS } from "@/lib/constants";
+import { BUSINESS, IMAGES } from "@/lib/constants";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -17,7 +18,7 @@ export default function ContactPage() {
     <main>
       <Navbar />
 
-      <section className="bg-[#1a0a00] py-16 px-4">
+      <section className="bg-[#1a0a00] dark:bg-[#0f0700] py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h1 className="font-display text-[clamp(44px,8vw,72px)] text-white leading-none mb-2">
             Contact Us
@@ -31,7 +32,7 @@ export default function ContactPage() {
             <div className="space-y-5">
               <OpeningHours />
 
-              <div className="bg-[#221005] border border-white/6 rounded-2xl p-6 space-y-4">
+              <div className="bg-[#221005] dark:bg-[#1a0a00] border border-white/6 rounded-2xl p-6 space-y-4">
                 <h3 className="text-white/50 text-xs font-semibold uppercase tracking-widest">
                   📱 Get in Touch
                 </h3>
@@ -67,7 +68,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="bg-[#221005] border border-white/6 rounded-2xl p-6 space-y-4">
+              <div className="bg-[#221005] dark:bg-[#1a0a00] border border-white/6 rounded-2xl p-6 space-y-4">
                 <h3 className="text-white/50 text-xs font-semibold uppercase tracking-widest">
                   📍 Address
                 </h3>
@@ -95,21 +96,25 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Right: map embed placeholder + quick CTA */}
+            {/* Right */}
             <div className="space-y-5">
-              {/* Map iframe embed */}
-              <div className="bg-[#221005] border border-white/6 rounded-2xl overflow-hidden h-64">
-                <iframe
-                  src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyD-placeholder&q=${BUSINESS.coordinates.lat},${BUSINESS.coordinates.lng}&zoom=16`}
-                  className="w-full h-full opacity-60"
-                  style={{ border: 0, filter: "invert(90%) hue-rotate(180deg)" }}
-                  allowFullScreen
-                  loading="lazy"
-                  title="Gineer Tasty Grills location map"
+              {/* Real location image instead of broken maps embed */}
+              <div className="bg-[#221005] dark:bg-[#1a0a00] border border-white/6 rounded-2xl overflow-hidden h-64 relative">
+                <Image
+                  src={IMAGES.campus}
+                  alt="University of Nigeria, Nsukka"
+                  fill
+                  className="object-cover opacity-60"
                 />
+                <div className="absolute inset-0 flex items-end p-4">
+                  <div className="bg-black/60 backdrop-blur-sm rounded-xl px-4 py-2">
+                    <p className="text-white text-xs font-semibold">
+                      📍 University of Nigeria, Ihe, Nsukka
+                    </p>
+                  </div>
+                </div>
               </div>
 
-              {/* Quick contact cards */}
               <a
                 href={`tel:${BUSINESS.phoneTel}`}
                 className="flex items-center gap-4 bg-[#e8450a] hover:bg-[#ff5500] text-white rounded-2xl p-5 transition-all hover:-translate-y-0.5 group"

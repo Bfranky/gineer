@@ -10,8 +10,8 @@ const links = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#110600] border-t border-white/5 py-10 px-4 text-center">
-      <div className="font-display text-3xl text-[#ff5500] mb-1">
+    <footer className="bg-[#110600] dark:bg-[#080400] border-t border-white/5 py-12 px-4 text-center">
+      <div className="font-display text-3xl text-[#ff5500] mb-1 tracking-wide">
         GINEER <span className="text-[#ffd600]">TASTY</span> GRILLS
       </div>
       <p className="text-white/30 text-sm mb-6">
@@ -45,7 +45,8 @@ export default function Footer() {
       </div>
 
       <p className="text-white/15 text-xs">
-        © {new Date().getFullYear()} Gineer Tasty Grills · UNN, Nsukka, Enugu State
+        © {new Date().getFullYear()} Gineer Tasty Grills · UNN, Nsukka, Enugu
+        State
       </p>
     </footer>
   );

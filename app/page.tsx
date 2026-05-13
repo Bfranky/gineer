@@ -22,7 +22,7 @@ export default function HomePage() {
       <ReviewsSection />
 
       {/* Info + Order section */}
-      <section className="py-16 px-4 bg-[#1a0a00]">
+      <section className="py-20 px-4 bg-[#1a0a00] dark:bg-[#0f0700]">
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             {/* Left: Hours + Contact */}
@@ -30,7 +30,7 @@ export default function HomePage() {
               <OpeningHours />
 
               {/* Address */}
-              <div className="bg-[#221005] border border-white/6 rounded-2xl p-6">
+              <div className="bg-[#221005] dark:bg-[#1a0a00] border border-white/6 rounded-2xl p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-2xl">📍</span>
                   <h3 className="text-white/50 text-xs font-semibold uppercase tracking-widest">
@@ -46,7 +46,9 @@ export default function HomePage() {
                     </div>
                   </div>
                   <div>
-                    <div className="text-white/40 text-xs mb-0.5">Plus Code</div>
+                    <div className="text-white/40 text-xs mb-0.5">
+                      Plus Code
+                    </div>
                     <div className="text-[#ff8844] text-sm font-semibold">
                       {BUSINESS.address.plusCode}
                     </div>
@@ -63,7 +65,7 @@ export default function HomePage() {
               </div>
 
               {/* Contact */}
-              <div className="bg-[#221005] border border-white/6 rounded-2xl p-6">
+              <div className="bg-[#221005] dark:bg-[#1a0a00] border border-white/6 rounded-2xl p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-2xl">📱</span>
                   <h3 className="text-white/50 text-xs font-semibold uppercase tracking-widest">
@@ -72,9 +74,21 @@ export default function HomePage() {
                 </div>
                 <div className="space-y-3">
                   {[
-                    { icon: "📞", label: "Phone / WhatsApp", value: BUSINESS.phone },
-                    { icon: "🚗", label: "Drive-Through", value: "Available from 3 PM" },
-                    { icon: "🏍️", label: "Delivery", value: "Within UNN campus" },
+                    {
+                      icon: "📞",
+                      label: "Phone / WhatsApp",
+                      value: BUSINESS.phone,
+                    },
+                    {
+                      icon: "🚗",
+                      label: "Drive-Through",
+                      value: "Available from 3 PM",
+                    },
+                    {
+                      icon: "🏍️",
+                      label: "Delivery",
+                      value: "Within UNN campus",
+                    },
                   ].map((row) => (
                     <div key={row.label} className="flex items-center gap-3">
                       <div className="w-9 h-9 bg-[#e8450a]/15 rounded-lg flex items-center justify-center text-base flex-shrink-0">

@@ -23,6 +23,38 @@ export const BUSINESS = {
   openHour: 15,
 } as const;
 
+// Real Unsplash food images
+export const IMAGES = {
+  heroBg:
+    "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1600&q=80",
+  heroFood:
+    "https://images.unsplash.com/photo-1558030006-450675393462?w=800&q=80",
+  sharwama:
+    "https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=600&q=80",
+  grills:
+    "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=600&q=80",
+  chicken:
+    "https://images.unsplash.com/photo-1598103442097-8b74394b95c3?w=600&q=80",
+  suya: "https://images.unsplash.com/photo-1544025162-d76538950491?w=600&q=80",
+  fish: "https://images.unsplash.com/photo-1580822184713-fc5400e7fe10?w=600&q=80",
+  mixedGrill:
+    "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=600&q=80",
+  fries:
+    "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=600&q=80",
+  loadedFries:
+    "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80",
+  coleslaw:
+    "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80",
+  drinks:
+    "https://images.unsplash.com/photo-1543253687-c931c8e01820?w=600&q=80",
+  restaurant:
+    "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80",
+  campus:
+    "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&q=80",
+  drivethru:
+    "https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=800&q=80",
+} as const;
+
 export const MENU_ITEMS: MenuItem[] = [
   // Sharwama
   {
@@ -33,6 +65,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 2500,
     category: "sharwama",
     emoji: "🌯",
+    image: IMAGES.sharwama,
     popular: true,
     spicyLevel: 2,
   },
@@ -43,6 +76,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 3000,
     category: "sharwama",
     emoji: "🌯",
+    image: IMAGES.sharwama,
     spicyLevel: 2,
   },
   {
@@ -52,6 +86,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 4000,
     category: "sharwama",
     emoji: "🌯",
+    image: IMAGES.sharwama,
     popular: true,
     spicyLevel: 2,
   },
@@ -62,6 +97,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 1800,
     category: "sharwama",
     emoji: "🌯",
+    image: IMAGES.sharwama,
     spicyLevel: 1,
   },
   // Grills
@@ -72,6 +108,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 3500,
     category: "grills",
     emoji: "🍗",
+    image: IMAGES.chicken,
     spicyLevel: 1,
   },
   {
@@ -81,6 +118,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 2500,
     category: "grills",
     emoji: "🥩",
+    image: IMAGES.suya,
     popular: true,
     spicyLevel: 3,
   },
@@ -91,6 +129,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 3000,
     category: "grills",
     emoji: "🐟",
+    image: IMAGES.fish,
     spicyLevel: 2,
   },
   {
@@ -100,6 +139,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 4000,
     category: "grills",
     emoji: "🍖",
+    image: IMAGES.mixedGrill,
     popular: true,
     spicyLevel: 2,
   },
@@ -111,6 +151,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 1000,
     category: "sides",
     emoji: "🍟",
+    image: IMAGES.fries,
   },
   {
     id: "sd-2",
@@ -119,6 +160,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 2000,
     category: "sides",
     emoji: "🍟",
+    image: IMAGES.loadedFries,
     popular: true,
   },
   {
@@ -128,6 +170,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 500,
     category: "sides",
     emoji: "🥗",
+    image: IMAGES.coleslaw,
   },
   // Drinks
   {
@@ -137,6 +180,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 300,
     category: "drinks",
     emoji: "🥤",
+    image: IMAGES.drinks,
   },
   {
     id: "dr-2",
@@ -145,6 +189,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 350,
     category: "drinks",
     emoji: "🍺",
+    image: IMAGES.drinks,
   },
   {
     id: "dr-3",
@@ -153,6 +198,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 200,
     category: "drinks",
     emoji: "💧",
+    image: IMAGES.drinks,
   },
 ];
 

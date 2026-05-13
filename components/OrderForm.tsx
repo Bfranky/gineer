@@ -26,19 +26,18 @@ export default function OrderForm() {
   const [form, setForm] = useState<FormState>(initial);
   const [errors, setErrors] = useState<Partial<FormState>>({});
   const [submitted, setSubmitted] = useState(false);
-  
+  const [orderTypeError, setOrderTypeError] = useState<string>("");
 
   const set = (key: keyof FormState, val: string) => {
     setForm((f) => ({ ...f, [key]: val }));
     setErrors((e) => ({ ...e, [key]: undefined }));
   };
 
-  const [orderTypeError, setOrderTypeError] = useState<string>("");
-
   const validate = (): boolean => {
     const errs: Partial<FormState> = {};
     let otErr = "";
-    if (form.name.trim().length < 2) errs.name = "Name must be at least 2 characters";
+    if (form.name.trim().length < 2)
+      errs.name = "Name must be at least 2 characters";
     if (!/^0\d{10}$/.test(form.phone.replace(/\s/g, "")))
       errs.phone = "Enter a valid Nigerian phone number (e.g. 08012345678)";
     if (!form.orderType) otErr = "Please select an order type";
@@ -76,15 +75,18 @@ export default function OrderForm() {
     }, 4000);
   };
 
+  const inputClass =
+    "w-full px-4 py-3 border-[1.5px] border-[#ffe0cc] dark:border-[#3d1a00] focus:border-[#e8450a] rounded-xl outline-none text-[#1a0a00] dark:text-white/90 text-sm transition-colors bg-white dark:bg-[#0f0700] placeholder:text-[#c9a090] dark:placeholder:text-white/20";
+
   return (
-    <div className="bg-white border border-[#ffe0cc] rounded-2xl p-6 md:p-8">
+    <div className="bg-white dark:bg-[#221005] border border-[#ffe0cc] dark:border-white/6 rounded-2xl p-6 md:p-8">
       {submitted ? (
         <div className="text-center py-10">
           <div className="text-5xl mb-4">🎉</div>
-          <h3 className="font-bold text-xl text-[#1a0a00] mb-2">
+          <h3 className="font-bold text-xl text-[#1a0a00] dark:text-white mb-2">
             WhatsApp opened!
           </h3>
-          <p className="text-[#7a5540] text-sm">
+          <p className="text-[#7a5540] dark:text-white/40 text-sm">
             Finish sending your order on WhatsApp and we'll confirm shortly.
           </p>
         </div>
@@ -92,7 +94,7 @@ export default function OrderForm() {
         <form onSubmit={handleSubmit} className="space-y-5" noValidate>
           {/* Name */}
           <div>
-            <label className="block text-sm font-bold text-[#3d1a00] mb-1.5">
+            <label className="block text-sm font-bold text-[#3d1a00] dark:text-white/80 mb-1.5">
               Your Name *
             </label>
             <input
@@ -100,16 +102,16 @@ export default function OrderForm() {
               value={form.name}
               onChange={(e) => set("name", e.target.value)}
               placeholder="Enter your name"
-              className="w-full px-4 py-3 border-[1.5px] border-[#ffe0cc] focus:border-[#e8450a] rounded-xl outline-none text-[#1a0a00] text-sm transition-colors"
+              className={inputClass}
             />
             {errors.name && (
-              <p className="text-red-500 text-xs mt-1">{errors.name}</p>
+              <p className="text-red-400 text-xs mt-1">{errors.name}</p>
             )}
           </div>
 
           {/* Phone */}
           <div>
-            <label className="block text-sm font-bold text-[#3d1a00] mb-1.5">
+            <label className="block text-sm font-bold text-[#3d1a00] dark:text-white/80 mb-1.5">
               Phone Number *
             </label>
             <input
@@ -117,16 +119,16 @@ export default function OrderForm() {
               value={form.phone}
               onChange={(e) => set("phone", e.target.value)}
               placeholder="08012345678"
-              className="w-full px-4 py-3 border-[1.5px] border-[#ffe0cc] focus:border-[#e8450a] rounded-xl outline-none text-[#1a0a00] text-sm transition-colors"
+              className={inputClass}
             />
             {errors.phone && (
-              <p className="text-red-500 text-xs mt-1">{errors.phone}</p>
+              <p className="text-red-400 text-xs mt-1">{errors.phone}</p>
             )}
           </div>
 
           {/* Order type */}
           <div>
-            <label className="block text-sm font-bold text-[#3d1a00] mb-1.5">
+            <label className="block text-sm font-bold text-[#3d1a00] dark:text-white/80 mb-1.5">
               Order Type *
             </label>
             <div className="grid grid-cols-2 gap-3">
@@ -142,26 +144,26 @@ export default function OrderForm() {
                   onClick={() => set("orderType", opt.val)}
                   className={`p-4 rounded-xl border-2 text-center transition-all ${
                     form.orderType === opt.val
-                      ? "border-[#e8450a] bg-[#fff5f0]"
-                      : "border-[#ffe0cc] hover:border-[#e8450a]/40"
+                      ? "border-[#e8450a] bg-[#fff5f0] dark:bg-[#e8450a]/15"
+                      : "border-[#ffe0cc] dark:border-[#3d1a00] hover:border-[#e8450a]/40"
                   }`}
                 >
                   <div className="text-3xl mb-1">{opt.emoji}</div>
-                  <div className="font-bold text-[#1a0a00] text-sm">
+                  <div className="font-bold text-[#1a0a00] dark:text-white text-sm">
                     {opt.label}
                   </div>
                 </button>
               ))}
             </div>
             {orderTypeError && (
-              <p className="text-red-500 text-xs mt-1">{orderTypeError}</p>
+              <p className="text-red-400 text-xs mt-1">{orderTypeError}</p>
             )}
           </div>
 
           {/* Conditional fields */}
           {form.orderType === "delivery" && (
             <div>
-              <label className="block text-sm font-bold text-[#3d1a00] mb-1.5">
+              <label className="block text-sm font-bold text-[#3d1a00] dark:text-white/80 mb-1.5">
                 Delivery Location (within UNN)
               </label>
               <input
@@ -169,14 +171,14 @@ export default function OrderForm() {
                 value={form.deliveryLocation}
                 onChange={(e) => set("deliveryLocation", e.target.value)}
                 placeholder="e.g. Aluta Hostel, Faculty of Engineering"
-                className="w-full px-4 py-3 border-[1.5px] border-[#ffe0cc] focus:border-[#e8450a] rounded-xl outline-none text-[#1a0a00] text-sm transition-colors"
+                className={inputClass}
               />
             </div>
           )}
 
           {form.orderType === "drive-through" && (
             <div>
-              <label className="block text-sm font-bold text-[#3d1a00] mb-1.5">
+              <label className="block text-sm font-bold text-[#3d1a00] dark:text-white/80 mb-1.5">
                 Preferred Pickup Time (optional)
               </label>
               <input
@@ -184,15 +186,17 @@ export default function OrderForm() {
                 min="15:00"
                 value={form.pickupTime}
                 onChange={(e) => set("pickupTime", e.target.value)}
-                className="w-full px-4 py-3 border-[1.5px] border-[#ffe0cc] focus:border-[#e8450a] rounded-xl outline-none text-[#1a0a00] text-sm transition-colors"
+                className={inputClass}
               />
-              <p className="text-[#7a5540] text-xs mt-1">We open at 3:00 PM</p>
+              <p className="text-[#7a5540] dark:text-white/30 text-xs mt-1">
+                We open at 3:00 PM
+              </p>
             </div>
           )}
 
           {/* Order details */}
           <div>
-            <label className="block text-sm font-bold text-[#3d1a00] mb-1.5">
+            <label className="block text-sm font-bold text-[#3d1a00] dark:text-white/80 mb-1.5">
               Your Order *
             </label>
             <textarea
@@ -200,10 +204,10 @@ export default function OrderForm() {
               value={form.items}
               onChange={(e) => set("items", e.target.value)}
               placeholder="e.g. 2× Top Notch Sharwama, 1× Loaded Fries, 2× Coke"
-              className="w-full px-4 py-3 border-[1.5px] border-[#ffe0cc] focus:border-[#e8450a] rounded-xl outline-none text-[#1a0a00] text-sm transition-colors resize-none"
+              className={`${inputClass} resize-none`}
             />
             {errors.items && (
-              <p className="text-red-500 text-xs mt-1">{errors.items}</p>
+              <p className="text-red-400 text-xs mt-1">{errors.items}</p>
             )}
           </div>
 
@@ -214,7 +218,9 @@ export default function OrderForm() {
             📲 Send Order via WhatsApp
           </button>
 
-          <div className="text-center text-[#7a5540] text-sm">— or —</div>
+          <div className="text-center text-[#7a5540] dark:text-white/30 text-sm">
+            — or —
+          </div>
 
           <a
             href={`tel:${BUSINESS.phoneTel}`}

@@ -13,7 +13,7 @@ export default function MenuPage() {
   return (
     <main>
       <Navbar />
-      <div className="bg-[#1a0a00] pt-10 pb-2 px-4">
+      <div className="bg-[#1a0a00] dark:bg-[#0f0700] pt-12 pb-2 px-4">
         <div className="max-w-6xl mx-auto">
           <h1 className="font-display text-[clamp(48px,8vw,80px)] text-white leading-none mb-2">
             Full Menu
