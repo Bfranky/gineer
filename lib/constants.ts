@@ -23,34 +23,51 @@ export const BUSINESS = {
   openHour: 15,
 } as const;
 
-// Real Unsplash food images
+// Real Unsplash food images — verified shawarma & grill photos
 export const IMAGES = {
+  // Hero background: grilled meats on fire
   heroBg:
     "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1600&q=80",
+  // Hero floating: shawarma wrap close-up
   heroFood:
-    "https://images.unsplash.com/photo-1558030006-450675393462?w=800&q=80",
+    "https://images.unsplash.com/photo-1613514785940-daed07799d9b?w=800&q=80",
+  // Shawarma wrap
   sharwama:
-    "https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=600&q=80",
+    "https://images.unsplash.com/photo-1619906084700-2bd1a7de1c33?w=600&q=80",
+  // Grilled meats platter
   grills:
-    "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=600&q=80",
+    "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80",
+  // Grilled chicken pieces
   chicken:
     "https://images.unsplash.com/photo-1598103442097-8b74394b95c3?w=600&q=80",
-  suya: "https://images.unsplash.com/photo-1544025162-d76538950491?w=600&q=80",
-  fish: "https://images.unsplash.com/photo-1580822184713-fc5400e7fe10?w=600&q=80",
+  // Meat skewers (suya)
+  suya:
+    "https://images.unsplash.com/photo-1544025162-d76538950491?w=600&q=80",
+  // Grilled fish
+  fish:
+    "https://images.unsplash.com/photo-1580822184713-fc5400e7fe10?w=600&q=80",
+  // Mixed grill platter
   mixedGrill:
-    "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=600&q=80",
+    "https://images.unsplash.com/photo-1558030006-450675393462?w=600&q=80",
+  // French fries
   fries:
     "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=600&q=80",
+  // Loaded fries
   loadedFries:
-    "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80",
+    "https://images.unsplash.com/photo-1630431341973-02e1b662ec35?w=600&q=80",
+  // Coleslaw
   coleslaw:
     "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80",
+  // Cold drinks
   drinks:
-    "https://images.unsplash.com/photo-1543253687-c931c8e01820?w=600&q=80",
+    "https://images.unsplash.com/photo-1527960471264-932f39eb5846?w=600&q=80",
+  // Restaurant interior
   restaurant:
     "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80",
+  // Campus/university
   campus:
-    "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&q=80",
+    "https://images.unsplash.com/photo-1562774053-701939374585?w=1200&q=80",
+  // Drive-through / food pickup
   drivethru:
     "https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=800&q=80",
 } as const;
