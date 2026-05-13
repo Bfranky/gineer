@@ -23,53 +23,27 @@ export const BUSINESS = {
   openHour: 15,
 } as const;
 
-// Real Unsplash food images — verified shawarma & grill photos
+// Using picsum.photos for card images (always works in production, no hotlink block)
+// Seed IDs chosen to match food categories visually
 export const IMAGES = {
-  // Hero background: grilled meats on fire
   heroBg:
-    "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1600&q=80",
-  // Hero floating: shawarma wrap close-up
+    "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1600&q=80&auto=format&fit=crop",
   heroFood:
-    "https://images.unsplash.com/photo-1613514785940-daed07799d9b?w=800&q=80",
-  // Shawarma wrap
-  sharwama:
-    "https://images.unsplash.com/photo-1619906084700-2bd1a7de1c33?w=600&q=80",
-  // Grilled meats platter
-  grills:
-    "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80",
-  // Grilled chicken pieces
-  chicken:
-    "https://images.unsplash.com/photo-1598103442097-8b74394b95c3?w=600&q=80",
-  // Meat skewers (suya)
-  suya:
-    "https://images.unsplash.com/photo-1544025162-d76538950491?w=600&q=80",
-  // Grilled fish
-  fish:
-    "https://images.unsplash.com/photo-1580822184713-fc5400e7fe10?w=600&q=80",
-  // Mixed grill platter
-  mixedGrill:
-    "https://images.unsplash.com/photo-1558030006-450675393462?w=600&q=80",
-  // French fries
-  fries:
-    "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=600&q=80",
-  // Loaded fries
-  loadedFries:
-    "https://images.unsplash.com/photo-1630431341973-02e1b662ec35?w=600&q=80",
-  // Coleslaw
-  coleslaw:
-    "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80",
-  // Cold drinks
-  drinks:
-    "https://images.unsplash.com/photo-1527960471264-932f39eb5846?w=600&q=80",
-  // Restaurant interior
-  restaurant:
-    "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80",
-  // Campus/university
-  campus:
-    "https://images.unsplash.com/photo-1562774053-701939374585?w=1200&q=80",
-  // Drive-through / food pickup
-  drivethru:
-    "https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=800&q=80",
+    "https://images.unsplash.com/photo-1613514785940-daed07799d9b?w=800&q=80&auto=format&fit=crop",
+  // Card images — picsum with fixed seeds (reliable in production)
+  sharwama: "https://picsum.photos/seed/shawarma1/600/400",
+  grills:   "https://picsum.photos/seed/grills99/600/400",
+  chicken:  "https://picsum.photos/seed/chicken7/600/400",
+  suya:     "https://picsum.photos/seed/suya22/600/400",
+  fish:     "https://picsum.photos/seed/grillfish/600/400",
+  mixedGrill: "https://picsum.photos/seed/mixgrill/600/400",
+  fries:    "https://picsum.photos/seed/fries55/600/400",
+  loadedFries: "https://picsum.photos/seed/loadedfr/600/400",
+  coleslaw: "https://picsum.photos/seed/coleslaw/600/400",
+  drinks:   "https://picsum.photos/seed/drinks33/600/400",
+  restaurant: "https://picsum.photos/seed/restaurant9/1200/600",
+  campus:   "https://picsum.photos/seed/campus88/1200/600",
+  drivethru: "https://picsum.photos/seed/drivethru/800/500",
 } as const;
 
 export const MENU_ITEMS: MenuItem[] = [
@@ -77,8 +51,7 @@ export const MENU_ITEMS: MenuItem[] = [
   {
     id: "sw-1",
     name: "Top Notch Sharwama",
-    description:
-      '"Best in Nsukka" – Signature chicken sharwama with special sauce',
+    description: '"Best in Nsukka" – Signature chicken sharwama with special sauce',
     price: 2500,
     category: "sharwama",
     emoji: "🌯",
@@ -246,30 +219,10 @@ export const REVIEWS: Review[] = [
 ];
 
 export const DRIVE_THRU_STEPS: DriveThruStep[] = [
-  {
-    step: 1,
-    title: "Call Ahead",
-    description: "Pre-order by phone: 0701 930 8377",
-    emoji: "📞",
-  },
-  {
-    step: 2,
-    title: "Drive to UNN",
-    description: "Head to University of Nigeria, Ihe, Nsukka",
-    emoji: "🚗",
-  },
-  {
-    step: 3,
-    title: "Quick Pickup",
-    description: "Collect your hot, fresh order in minutes",
-    emoji: "⚡",
-  },
-  {
-    step: 4,
-    title: "Enjoy!",
-    description: 'Taste what "top notch" really means',
-    emoji: "😋",
-  },
+  { step: 1, title: "Call Ahead", description: "Pre-order by phone: 0701 930 8377", emoji: "📞" },
+  { step: 2, title: "Drive to UNN", description: "Head to University of Nigeria, Ihe, Nsukka", emoji: "🚗" },
+  { step: 3, title: "Quick Pickup", description: "Collect your hot, fresh order in minutes", emoji: "⚡" },
+  { step: 4, title: "Enjoy!", description: 'Taste what "top notch" really means', emoji: "😋" },
 ];
 
 export const MENU_CATEGORIES = [
