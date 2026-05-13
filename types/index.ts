@@ -7,6 +7,7 @@ export interface MenuItem {
   price: number;
   category: MenuCategory;
   emoji: string;
+  image?: string;
   popular?: boolean;
   spicyLevel?: 1 | 2 | 3;
   available?: boolean;

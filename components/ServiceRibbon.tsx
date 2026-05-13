@@ -11,12 +11,12 @@ const services = [
 
 export default function ServiceRibbon() {
   return (
-    <div className="bg-[#e8450a] overflow-hidden">
+    <div className="bg-[#1b3a2d] border-y border-[#c9972b]/30 overflow-hidden">
       <div className="flex flex-wrap justify-center">
         {services.map((s, i) => (
           <div
             key={i}
-            className="flex items-center gap-2 px-5 py-3.5 text-white text-xs font-extrabold uppercase tracking-widest border-r border-white/20 last:border-r-0"
+            className="flex items-center gap-2 px-6 py-4 text-[#f0c060] text-xs font-bold uppercase tracking-widest border-r border-[#c9972b]/20 last:border-r-0"
           >
             <span className="text-sm">{s.emoji}</span>
             {s.label}

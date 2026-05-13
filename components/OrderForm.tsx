@@ -76,14 +76,14 @@ export default function OrderForm() {
   };
 
   const inputClass =
-    "w-full px-4 py-3 border-[1.5px] border-[#ffe0cc] dark:border-[#3d1a00] focus:border-[#e8450a] rounded-xl outline-none text-[#1a0a00] dark:text-white/90 text-sm transition-colors bg-white dark:bg-[#0f0700] placeholder:text-[#c9a090] dark:placeholder:text-white/20";
+    "w-full px-4 py-3 border-[1.5px] border-[#e8d9bb] focus:border-[#c9972b] rounded-xl outline-none text-[#1b3a2d] text-sm transition-colors bg-white placeholder:text-[#1b3a2d]/30";
 
   return (
-    <div className="bg-white dark:bg-[#221005] border border-[#ffe0cc] dark:border-white/6 rounded-2xl p-6 md:p-8">
+    <div className="bg-white border border-[#e8d9bb] rounded-2xl p-6 md:p-8">
       {submitted ? (
         <div className="text-center py-10">
           <div className="text-5xl mb-4">🎉</div>
-          <h3 className="font-bold text-xl text-[#1a0a00] dark:text-white mb-2">
+          <h3 className="font-bold text-xl text-[#1b3a2d] dark:text-white mb-2">
             WhatsApp opened!
           </h3>
           <p className="text-[#7a5540] dark:text-white/40 text-sm">
@@ -144,12 +144,12 @@ export default function OrderForm() {
                   onClick={() => set("orderType", opt.val)}
                   className={`p-4 rounded-xl border-2 text-center transition-all ${
                     form.orderType === opt.val
-                      ? "border-[#e8450a] bg-[#fff5f0] dark:bg-[#e8450a]/15"
-                      : "border-[#ffe0cc] dark:border-[#3d1a00] hover:border-[#e8450a]/40"
+                      ? "border-[#c9972b] bg-[#fdf4e3]"
+                      : "border-[#e8d9bb] hover:border-[#c9972b]/40"
                   }`}
                 >
                   <div className="text-3xl mb-1">{opt.emoji}</div>
-                  <div className="font-bold text-[#1a0a00] dark:text-white text-sm">
+                  <div className="font-bold text-[#1b3a2d] dark:text-white text-sm">
                     {opt.label}
                   </div>
                 </button>
@@ -213,7 +213,7 @@ export default function OrderForm() {
 
           <button
             type="submit"
-            className="w-full bg-[#e8450a] hover:bg-[#ff5500] text-white font-bold text-base py-4 rounded-full transition-all hover:-translate-y-0.5 hover:shadow-lg shadow-[#e8450a]/30 flex items-center justify-center gap-2"
+            className="w-full bg-[#1b3a2d] hover:bg-[#2d5a42] text-white font-bold text-base py-4 rounded-full transition-all hover:-translate-y-0.5 hover:shadow-lg shadow-[#e8450a]/30 flex items-center justify-center gap-2"
           >
             📲 Send Order via WhatsApp
           </button>
