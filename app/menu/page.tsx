@@ -12,7 +12,7 @@ export default function MenuPage() {
     <main>
       <div className="relative py-20 px-4 overflow-hidden">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={IMAGES.grills} alt="" className="absolute inset-0 w-full h-full object-cover" loading="eager" />
+        <img src={IMAGES.heroBg} alt="" className="absolute inset-0 w-full h-full object-cover" loading="eager" />
         <div className="absolute inset-0 bg-[#1b3a2d]/92" />
         <div className="relative z-10 max-w-6xl mx-auto text-center">
           <span className="inline-block text-[#c9972b] text-xs uppercase tracking-[0.3em] font-bold border-b border-[#c9972b]/40 pb-1 mb-4">
