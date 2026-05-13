@@ -26,7 +26,10 @@ export const IMAGES = {
   heroBg:     "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1600&q=80&auto=format&fit=crop",
   heroFood:   "https://images.unsplash.com/photo-1613514785940-daed07799d9b?w=800&q=80&auto=format&fit=crop",
   // Sharwama / wraps
-  sharwama:   "https://images.unsplash.com/photo-1619906084700-2bd1a7de1c33?w=600&q=80&auto=format&fit=crop",
+  sharwama1:  "https://images.unsplash.com/photo-1527736947477-2790e28f3443?w=600&q=80&auto=format&fit=crop",
+  sharwama2:  "https://images.unsplash.com/photo-1530785602389-07594beb8b73?w=600&q=80&auto=format&fit=crop",
+  sharwama3:  "https://images.unsplash.com/photo-1547699326-3d895d9acd30?w=600&q=80&auto=format&fit=crop",
+  sharwama4:  "https://images.unsplash.com/photo-1626700051175-6884013a1e68?w=600&q=80&auto=format&fit=crop",
   // Grilled chicken
   chicken:    "https://images.unsplash.com/photo-1598103442097-8b74394b95c3?w=600&q=80&auto=format&fit=crop",
   // Meat skewers / suya
@@ -53,10 +56,10 @@ export const IMAGES = {
 
 export const MENU_ITEMS: MenuItem[] = [
   // Sharwama
-  { id: "sw-1", name: "Top Notch Sharwama", description: '"Best in Nsukka" – Signature chicken sharwama with special sauce', price: 2500, category: "sharwama", emoji: "🌯", image: IMAGES.sharwama, popular: true, spicyLevel: 2 },
-  { id: "sw-2", name: "Beef Sharwama", description: "Tender beef with fresh veggies and our secret blend", price: 3000, category: "sharwama", emoji: "🌯", image: IMAGES.sharwama, spicyLevel: 2 },
-  { id: "sw-3", name: "Jumbo Sharwama", description: "Extra large serving with double meat, extra sauce", price: 4000, category: "sharwama", emoji: "🌯", image: IMAGES.sharwama, popular: true, spicyLevel: 2 },
-  { id: "sw-4", name: "Mini Sharwama", description: "Perfect for a quick snack between lectures", price: 1800, category: "sharwama", emoji: "🌯", image: IMAGES.sharwama, spicyLevel: 1 },
+  { id: "sw-1", name: "Top Notch Sharwama", description: '"Best in Nsukka" – Signature chicken sharwama with special sauce', price: 2500, category: "sharwama", emoji: "🌯", image: IMAGES.sharwama1, popular: true, spicyLevel: 2 },
+  { id: "sw-2", name: "Beef Sharwama", description: "Tender beef with fresh veggies and our secret blend", price: 3000, category: "sharwama", emoji: "🌯", image: IMAGES.sharwama2, spicyLevel: 2 },
+  { id: "sw-3", name: "Jumbo Sharwama", description: "Extra large serving with double meat, extra sauce", price: 4000, category: "sharwama", emoji: "🌯", image: IMAGES.sharwama3, popular: true, spicyLevel: 2 },
+  { id: "sw-4", name: "Mini Sharwama", description: "Perfect for a quick snack between lectures", price: 1800, category: "sharwama", emoji: "🌯", image: IMAGES.sharwama4, spicyLevel: 1 },
   // Grills
   { id: "gr-1", name: "Grilled Chicken", description: "Perfectly seasoned, flame-grilled to perfection", price: 3500, category: "grills", emoji: "🍗", image: IMAGES.chicken, spicyLevel: 1 },
   { id: "gr-2", name: "Suya Special", description: "Traditional Nigerian spicy grilled meat skewers", price: 2500, category: "grills", emoji: "🥩", image: IMAGES.suya, popular: true, spicyLevel: 3 },
