@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { BUSINESS, IMAGES } from "@/lib/constants";
 import { isOpen } from "@/lib/utils";
 
@@ -8,19 +7,17 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-[680px] flex items-center overflow-hidden">
-      {/* Full background image */}
-      <div className="absolute inset-0">
-        <Image
-          src={IMAGES.heroBg}
-          alt="Grilled food background"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-hero-overlay" />
-      </div>
+      {/* Full background image — plain img, browser-fetched */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={IMAGES.heroBg}
+        alt="Grilled food background"
+        className="absolute inset-0 w-full h-full object-cover"
+        loading="eager"
+      />
+      <div className="absolute inset-0 bg-hero-overlay" />
 
-      {/* Subtle gold grain overlay */}
+      {/* Gold glow */}
       <div
         className="absolute inset-0 pointer-events-none opacity-20"
         style={{
@@ -32,15 +29,13 @@ export default function Hero() {
       {/* Floating food image — desktop only */}
       <div className="hidden lg:block absolute right-[6%] top-1/2 -translate-y-1/2">
         <div className="w-[380px] h-[380px] rounded-full overflow-hidden border-4 border-[#c9972b]/50 shadow-[0_0_80px_rgba(201,151,43,0.25)] animate-float">
-          <Image
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src={IMAGES.heroFood}
             alt="Gineer Tasty Grills food"
-            fill
-            className="object-cover"
-            priority
+            className="w-full h-full object-cover"
           />
         </div>
-        {/* Gold ring decoration */}
         <div className="absolute -inset-4 rounded-full border border-[#c9972b]/20 pointer-events-none" />
       </div>
 
@@ -63,12 +58,10 @@ export default function Hero() {
             Grills
           </h1>
 
-          {/* Tagline */}
           <p className="font-accent text-[#e8d9bb] text-xl md:text-2xl font-light italic mb-8 leading-relaxed">
             "{BUSINESS.tagline}"
           </p>
 
-          {/* Pills */}
           <div className="flex flex-wrap gap-2 mb-10">
             <div className="flex items-center gap-1.5 bg-[#c9972b]/20 border border-[#c9972b]/40 rounded-full px-4 py-2 text-[#f0c060] text-sm font-semibold">
               ★ {BUSINESS.rating}/5 Rated
@@ -81,24 +74,14 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* CTAs */}
           <div className="flex flex-wrap gap-3">
-            <Link
-              href="/menu"
-              className="bg-[#c9972b] hover:bg-[#f0c060] text-[#1b3a2d] font-bold text-base px-8 py-3.5 rounded-full transition-all hover:-translate-y-0.5 hover:shadow-lg shadow-[#c9972b]/30"
-            >
+            <Link href="/menu" className="bg-[#c9972b] hover:bg-[#f0c060] text-[#1b3a2d] font-bold text-base px-8 py-3.5 rounded-full transition-all hover:-translate-y-0.5 hover:shadow-lg shadow-[#c9972b]/30">
               View Menu
             </Link>
-            <Link
-              href="/order"
-              className="bg-[#1b3a2d] hover:bg-[#2d5a42] text-white font-bold text-base px-8 py-3.5 rounded-full border border-white/20 transition-all hover:-translate-y-0.5"
-            >
+            <Link href="/order" className="bg-[#1b3a2d] hover:bg-[#2d5a42] text-white font-bold text-base px-8 py-3.5 rounded-full border border-white/20 transition-all hover:-translate-y-0.5">
               Order Now ✦
             </Link>
-            <a
-              href={`tel:${BUSINESS.phoneTel}`}
-              className="border border-white/30 hover:border-[#c9972b] text-white hover:text-[#f0c060] font-semibold text-base px-7 py-3.5 rounded-full transition-all hover:-translate-y-0.5"
-            >
+            <a href={`tel:${BUSINESS.phoneTel}`} className="border border-white/30 hover:border-[#c9972b] text-white hover:text-[#f0c060] font-semibold text-base px-7 py-3.5 rounded-full transition-all hover:-translate-y-0.5">
               📞 Call to Order
             </a>
           </div>

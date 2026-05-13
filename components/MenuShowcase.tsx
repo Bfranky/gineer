@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
-import { MENU_ITEMS, MENU_CATEGORIES, IMAGES } from "@/lib/constants";
+import { MENU_ITEMS, MENU_CATEGORIES } from "@/lib/constants";
 import { formatPrice } from "@/lib/utils";
 import type { MenuCategory } from "@/types";
 
@@ -12,13 +11,7 @@ export default function MenuShowcase() {
   const items = MENU_ITEMS.filter((i) => i.category === active);
 
   return (
-    <section className="relative py-24 px-4 overflow-hidden">
-      {/* Subtle background image */}
-      <div className="absolute inset-0">
-        <Image src={IMAGES.grills} alt="" fill className="object-cover opacity-5" />
-      </div>
-      <div className="absolute inset-0 bg-[#faf6ee]" style={{opacity:0.97}} />
-
+    <section className="relative py-24 px-4 overflow-hidden bg-[#faf6ee]">
       <div className="relative z-10 max-w-6xl mx-auto">
         {/* Header */}
         <div className="mb-12 text-center">
@@ -57,21 +50,22 @@ export default function MenuShowcase() {
               key={item.id}
               className="card-elegant overflow-hidden hover:border-[#c9972b] hover:-translate-y-1.5 transition-all duration-300 group shadow-sm hover:shadow-md"
             >
-              {/* Image */}
-              <div className="h-48 relative overflow-hidden">
+              {/* Image — plain <img> so browser fetches directly, bypassing Vercel servers */}
+              <div className="h-48 relative overflow-hidden bg-gradient-to-br from-[#e8d9bb] to-[#f0c060]/40">
                 {item.image ? (
-                  <Image
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
                     src={item.image}
                     alt={item.name}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
                   />
                 ) : (
-                  <div className="h-full flex items-center justify-center bg-gradient-to-br from-[#e8d9bb] to-[#f0c060]/40">
+                  <div className="h-full flex items-center justify-center">
                     <span className="text-5xl">{item.emoji}</span>
                   </div>
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
                 {item.popular && (
                   <span className="absolute top-3 right-3 bg-[#c9972b] text-white text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wide">
                     ★ Popular
