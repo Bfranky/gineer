@@ -1,13 +1,33 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MENU_ITEMS, MENU_CATEGORIES } from "@/lib/constants";
 import { formatPrice } from "@/lib/utils";
 import type { MenuCategory } from "@/types";
 
+// Renders image only on client-side — bypasses Vercel's server fetching Unsplash
+function ClientImage({ src, alt, className }: { src: string; alt: string; className: string }) {
+  const [mounted, setMounted] = useState(false);
+  const [error, setError] = useState(false);
+
+  useEffect(() => { setMounted(true); }, []);
+
+  if (!mounted || error) return null;
+
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={src}
+      alt={alt}
+      className={className}
+      onError={() => setError(true)}
+      loading="lazy"
+    />
+  );
+}
+
 export default function MenuShowcase() {
   const [active, setActive] = useState<MenuCategory>("sharwama");
-
   const items = MENU_ITEMS.filter((i) => i.category === active);
 
   return (
@@ -50,29 +70,25 @@ export default function MenuShowcase() {
               key={item.id}
               className="card-elegant overflow-hidden hover:border-[#c9972b] hover:-translate-y-1.5 transition-all duration-300 group shadow-sm hover:shadow-md"
             >
-              {/* Image — plain <img> so browser fetches directly, bypassing Vercel servers */}
-              <div className="h-48 relative overflow-hidden bg-gradient-to-br from-[#e8d9bb] to-[#f0c060]/40">
-                {item.image ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
+              {/* Image area */}
+              <div className="h-48 relative overflow-hidden bg-gradient-to-br from-[#e8d9bb] to-[#f0c060]/40 flex items-center justify-center">
+                {item.image && (
+                  <ClientImage
                     src={item.image}
                     alt={item.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                ) : (
-                  <div className="h-full flex items-center justify-center">
-                    <span className="text-5xl">{item.emoji}</span>
-                  </div>
                 )}
+                {/* Emoji fallback — shows until image loads */}
+                <span className="text-5xl opacity-30 select-none">{item.emoji}</span>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
                 {item.popular && (
-                  <span className="absolute top-3 right-3 bg-[#c9972b] text-white text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wide">
+                  <span className="absolute top-3 right-3 bg-[#c9972b] text-white text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wide z-10">
                     ★ Popular
                   </span>
                 )}
                 {item.spicyLevel && (
-                  <span className="absolute top-3 left-3 bg-black/40 backdrop-blur-sm text-white text-[11px] rounded-full px-2 py-0.5">
+                  <span className="absolute top-3 left-3 bg-black/40 backdrop-blur-sm text-white text-[11px] rounded-full px-2 py-0.5 z-10">
                     {"🌶".repeat(item.spicyLevel)}
                   </span>
                 )}
