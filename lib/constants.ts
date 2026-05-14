@@ -26,18 +26,18 @@ export const IMAGES = {
   heroBg:     "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1600&q=80&auto=format&fit=crop",
   heroFood:   "https://images.unsplash.com/photo-1613514785940-daed07799d9b?w=800&q=80&auto=format&fit=crop",
   // Sharwama / wraps
-  sharwama1:  "https://images.unsplash.com/photo-1527736947477-2790e28f3443?w=600&q=80&auto=format&fit=crop",
-  sharwama2:  "https://images.unsplash.com/photo-1530785602389-07594beb8b73?w=600&q=80&auto=format&fit=crop",
-  sharwama3:  "https://images.unsplash.com/photo-1547699326-3d895d9acd30?w=600&q=80&auto=format&fit=crop",
-  sharwama4:  "https://images.unsplash.com/photo-1626700051175-6884013a1e68?w=600&q=80&auto=format&fit=crop",
+  sharwama1:  "/shawama (1).jpg",
+  sharwama2:  "/shawama (2).jpg",
+  sharwama3:  "/shawama (3).jpg",
+  sharwama4:  "/shawama (4).jpg",
   // Grilled chicken
-  chicken:    "https://images.unsplash.com/photo-1598103442097-8b74394b95c3?w=600&q=80&auto=format&fit=crop",
+  chicken:    "/images/grilled_chicken.png",
   // Meat skewers / suya
-  suya:       "https://images.unsplash.com/photo-1544025162-d76538950491?w=600&q=80&auto=format&fit=crop",
+  suya:       "/images/suya_special.png",
   // Grilled fish
-  fish:       "https://images.unsplash.com/photo-1580822184713-fc5400e7fe10?w=600&q=80&auto=format&fit=crop",
+  fish:       "/images/grilled_fish.png",
   // Mixed grill platter
-  mixedGrill: "https://images.unsplash.com/photo-1558030006-450675393462?w=600&q=80&auto=format&fit=crop",
+  mixedGrill: "/images/mixed_grill.png",
   // French fries
   fries:      "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=600&q=80&auto=format&fit=crop",
   // Loaded fries
